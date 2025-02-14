@@ -1,4 +1,3 @@
-import ProfileImg from "../../public/ProfileImg.png";
 import "../index.css";
 
 const About = () => {
