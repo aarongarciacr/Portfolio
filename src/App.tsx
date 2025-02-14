@@ -1,6 +1,7 @@
 import Education from "./components/Education";
 import Greeting from "./components/Greeting";
 import Portfolio from "./components/Portfolio";
+import Technologies from "./components/Technologies";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Greeting />
       <Education />
       <Portfolio />
-      {/* <Technologies /> */}
+      <Technologies />
       {/* <Hobbies /> */}
       {/* <Contact /> */}
       {/* <Socials /> */}
