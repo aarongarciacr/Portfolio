@@ -26,20 +26,21 @@ const portfolio = [
 
 const Portfolio = () => {
   return (
-    <div>
-      <h1>My Work</h1>
-      {portfolio.map((project, index) => {
-        return (
-          <div key={index}>
+    <div className="h-[108svh] bg-slate-200">
+      <h1 className="m-auto w-[60dvw] py-20 pl-0 text-5xl">My Work</h1>
+      <div className="mx-50 flex justify-around pt-15">
+        {portfolio.map((project, index) => {
+          return (
             <PortfolioCard
+              key={index}
               name={project.name}
               type={project.type}
               description={project.description}
               image={project.image}
             />
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

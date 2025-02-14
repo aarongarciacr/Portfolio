@@ -16,9 +16,9 @@ const education = [
 const Education = () => {
   return (
     <>
-      <div className="h-[70svh] bg-slate-800">
+      <div className="h-[80svh] bg-slate-800">
         <div className="m-auto h-full w-[60svw]">
-          <h1 className="py-10 text-3xl text-gray-400">Education</h1>
+          <h1 className="py-10 pb-0 text-3xl text-gray-400">Education</h1>
           <div className="flex h-[80%] flex-col justify-around text-gray-200">
             {education.map((school, index) => {
               return (
