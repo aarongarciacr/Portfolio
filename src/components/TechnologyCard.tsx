@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../index.css";
 
 interface TechnologyCardProps {
@@ -11,8 +10,8 @@ interface TechnologyCardProps {
 
 const TechnologyCard = ({ tech }: TechnologyCardProps) => {
   return (
-    <div className="flex flex-col">
-      <h1>{tech.type}</h1>
+    <div className="flex flex-col text-3xl text-slate-200">
+      <h1 className="pb-10">{tech.type}</h1>
 
       <div className="group relative flex h-[450px] w-[450px] items-center justify-center overflow-hidden rounded-xl bg-neutral-200">
         <div className="scroll-container">
@@ -38,7 +37,7 @@ const TechnologyCard = ({ tech }: TechnologyCardProps) => {
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 flex h-30 flex-col justify-end bg-black/50 p-4 text-2xl text-white">
-          <p className="text-base">{tech.name.toLocaleUpperCase()}</p>
+          <p className="text-3xl">{tech.name.toLocaleUpperCase()}</p>
         </div>
       </div>
     </div>

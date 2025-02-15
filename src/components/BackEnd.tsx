@@ -9,7 +9,7 @@ import postgres from "../../public/Technologies/Backend/postgres.png";
 import python from "../../public/Technologies/Backend/python.png";
 import sequelize from "../../public/Technologies/Backend/sequelize.png";
 import sqlite from "../../public/Technologies/Backend/sqlite.png";
-
+import sqlAlchemy from "../../public/Technologies/Backend/SQLAlchemy.svg";
 interface TechType {
   type: string;
   name: string;
@@ -30,7 +30,7 @@ const backTechnologies: TechType[] = [
   {
     type: "ORMs/Database",
     name: "Sequelize, SQLAlchemy",
-    icons: [sequelize],
+    icons: [sequelize, sqlAlchemy],
   },
   {
     type: "Databases",

@@ -1,4 +1,5 @@
 import "../index.css";
+import { Reveal } from "./Reveal";
 
 const education = [
   {
@@ -18,13 +19,19 @@ const Education = () => {
     <>
       <div className="h-[80svh] bg-slate-800">
         <div className="m-auto h-full w-[60svw]">
-          <h1 className="py-10 pb-0 text-3xl text-gray-400">Education</h1>
+          <Reveal>
+            <h1 className="py-10 pb-0 text-3xl text-gray-400">Education</h1>
+          </Reveal>
           <div className="flex h-[80%] flex-col justify-around text-gray-200">
             {education.map((school, index) => {
               return (
                 <div key={index}>
-                  <h1 className="py-5 text-5xl">{school.name}</h1>
-                  <p className="text-2xl">{school.description}</p>
+                  <Reveal>
+                    <h1 className="py-5 text-5xl">{school.name}</h1>
+                  </Reveal>
+                  <Reveal>
+                    <p className="text-2xl">{school.description}</p>
+                  </Reveal>
                 </div>
               );
             })}
