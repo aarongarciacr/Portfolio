@@ -1,12 +1,10 @@
 import "../index.css";
-import BackEnd from "./BackEnd";
-import FrontEnd from "./FrontEnd";
+import TechnologiesCarousel from "./TechnologiesCarousel";
 
 const Technologies = () => {
   return (
-    <div className="h-[110svh] bg-slate-800">
-      <FrontEnd />
-      <BackEnd />
+    <div className="bg-neutral-800">
+      <TechnologiesCarousel />
     </div>
   );
 };
