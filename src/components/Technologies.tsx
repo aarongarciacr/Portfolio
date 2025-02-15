@@ -1,10 +1,12 @@
 import "../index.css";
-import TechnologiesCard from "./TechnologieCard";
+import BackEnd from "./BackEnd";
+import FrontEnd from "./FrontEnd";
 
 const Technologies = () => {
   return (
     <div className="h-[110svh] bg-slate-800">
-      <TechnologiesCard />
+      <FrontEnd />
+      <BackEnd />
     </div>
   );
 };
