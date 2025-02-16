@@ -1,15 +1,15 @@
 import { useRef } from "react";
-import "../index.css";
+import "../../index.css";
 import TechnologyCard from "./TechnologyCard";
 import { useScroll, useTransform, motion } from "framer-motion";
-import express from "../../public/Technologies/Backend/express.png";
-import flask from "../../public/Technologies/Backend/flask.svg";
-import node from "../../public/Technologies/Backend/node.png";
-import postgres from "../../public/Technologies/Backend/postgres.png";
-import python from "../../public/Technologies/Backend/python.png";
-import sequelize from "../../public/Technologies/Backend/sequelize.png";
-import sqlite from "../../public/Technologies/Backend/sqlite.png";
-import sqlAlchemy from "../../public/Technologies/Backend/SQLAlchemy.svg";
+import express from "../../assets/Technologies/Backend/express.png";
+import flask from "../../assets/Technologies/Backend/flask.svg";
+import node from "../../assets/Technologies/Backend/node.png";
+import postgres from "../../assets/Technologies/Backend/postgres.png";
+import python from "../../assets/Technologies/Backend/python.png";
+import sequelize from "../../assets/Technologies/Backend/sequelize.png";
+import sqlite from "../../assets/Technologies/Backend/sqlite.png";
+import sqlAlchemy from "../../assets/Technologies/Backend/SQLAlchemy.svg";
 interface TechType {
   type: string;
   name: string;

@@ -1,14 +1,14 @@
 import { useRef } from "react";
-import "../index.css";
+import "../../index.css";
 import TechnologyCard from "./TechnologyCard";
 import { useScroll, useTransform, motion } from "framer-motion";
-import react from "../../public/Technologies/Frontend/react.png";
-import cssHtml from "../../public/Technologies/Frontend/css-html.png";
-import framerMotion from "../../public/Technologies/Frontend/framer-motion.svg";
-import javascript from "../../public/Technologies/Frontend/js.png";
-import redux from "../../public/Technologies/Frontend/redux.png";
-import tailwind from "../../public/Technologies/Frontend/tailwind.png";
-import typescript from "../../public/Technologies/Frontend/TS.png";
+import react from "../../assets/Technologies/Frontend/react.png";
+import cssHtml from "../../assets/Technologies/Frontend/css-html.png";
+import framerMotion from "../../assets/Technologies/Frontend/framer-motion.svg";
+import javascript from "../../assets/Technologies/Frontend/js.png";
+import redux from "../../assets/Technologies/Frontend/redux.png";
+import tailwind from "../../assets/Technologies/Frontend/tailwind.png";
+import typescript from "../../assets/Technologies/Frontend/TS.png";
 
 interface TechType {
   type: string;

@@ -1,5 +1,5 @@
-import "../index.css";
-import { Reveal } from "./Reveal";
+import "../../index.css";
+import { Reveal } from "../Reveal";
 
 const About = () => {
   return (

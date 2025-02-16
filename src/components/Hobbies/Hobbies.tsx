@@ -1,28 +1,19 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { motion, useMotionValue } from "framer-motion";
-
-const imgs = [
-  "/assets/nature/1.jpg",
-  "/assets/nature/2.jpg",
-  "/assets/nature/3.jpg",
-  "/assets/nature/4.jpg",
-  "/assets/nature/5.jpg",
-  "/assets/nature/6.jpg",
-  "/assets/nature/7.jpg",
-];
+import { useMotionValue, motion } from "framer-motion";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
+import Images, { imgs } from "./Images";
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 5;
+const AUTO_DELAY = ONE_SECOND * 7;
 const DRAG_BUFFER = 50;
 
-const SPRING_OPTIONS = {
+export const SPRING_OPTION = {
   type: "spring",
   mass: 3,
   stiffness: 400,
   damping: 50,
 };
 
-export const SwipeCarousel = () => {
+const Hobbies = () => {
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0);
@@ -42,7 +33,7 @@ export const SwipeCarousel = () => {
     }, AUTO_DELAY);
 
     return () => clearInterval(intervalRef);
-  }, []);
+  }, [dragX]);
 
   const onDragEnd = () => {
     const x = dragX.get();
@@ -55,7 +46,7 @@ export const SwipeCarousel = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-neutral-950 py-8">
+    <div className="relative overflow-hidden bg-slate-800">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -68,40 +59,15 @@ export const SwipeCarousel = () => {
         animate={{
           translateX: `-${imgIndex * 100}%`,
         }}
-        transition={SPRING_OPTIONS}
+        transition={SPRING_OPTION}
         onDragEnd={onDragEnd}
         className="flex cursor-grab items-center active:cursor-grabbing"
       >
         <Images imgIndex={imgIndex} />
       </motion.div>
-
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
-      <GradientEdges />
+      {/* <GradientEdges /> */}
     </div>
-  );
-};
-
-const Images = ({ imgIndex }: { imgIndex: number }) => {
-  return (
-    <>
-      {imgs.map((imgSrc, idx) => {
-        return (
-          <motion.div
-            key={idx}
-            style={{
-              backgroundImage: `url(${imgSrc})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            animate={{
-              scale: imgIndex === idx ? 0.95 : 0.85,
-            }}
-            transition={SPRING_OPTIONS}
-            className="aspect-video w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
-          />
-        );
-      })}
-    </>
   );
 };
 
@@ -113,7 +79,7 @@ const Dots = ({
   setImgIndex: Dispatch<SetStateAction<number>>;
 }) => {
   return (
-    <div className="mt-4 flex w-full justify-center gap-2">
+    <div className="mt-4 flex w-full justify-center gap-2 pb-15">
       {imgs.map((_, idx) => {
         return (
           <button
@@ -129,11 +95,4 @@ const Dots = ({
   );
 };
 
-const GradientEdges = () => {
-  return (
-    <>
-      <div className="pointer-events-none absolute top-0 bottom-0 left-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
-      <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
-    </>
-  );
-};
+export default Hobbies;

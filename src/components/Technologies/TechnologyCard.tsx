@@ -1,5 +1,3 @@
-import "../index.css";
-
 interface TechnologyCardProps {
   tech: {
     type: string;

@@ -1,8 +1,8 @@
-import Airbnb from "../../public/portfolio/Airbnb.png";
-import Assemble from "../../public/portfolio/Assemble.png";
-import EarTrainer from "../../public/portfolio/EarTrainer.png";
+import Airbnb from "../../assets/portfolio/Airbnb.png";
+import Assemble from "../../assets/portfolio/Assemble.png";
+import EarTrainer from "../../assets/portfolio/EarTrainer.png";
 import PortfolioCard from "./PortfolioCard";
-import { Reveal } from "./Reveal";
+import { Reveal } from "../Reveal";
 
 const portfolio = [
   {

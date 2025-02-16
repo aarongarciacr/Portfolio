@@ -1,9 +1,9 @@
 import { SwipeCarousel } from "./components/carousel";
 import Education from "./components/Education";
-import Greeting from "./components/Greeting";
-import Hobbies from "./components/Hobbies";
-import Portfolio from "./components/Portfolio";
-import Technologies from "./components/Technologies";
+import Greeting from "./components/LandingPage/Greeting";
+import Hobbies from "./components/Hobbies/Hobbies";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Technologies from "./components/Technologies/Technologies";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Portfolio />
       <Technologies />
       <Hobbies />
-      <SwipeCarousel />
+      {/* <SwipeCarousel /> */}
       {/* <Contact /> */}
       {/* <Socials /> */}
     </>

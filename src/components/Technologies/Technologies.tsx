@@ -1,4 +1,3 @@
-import "../index.css";
 import TechnologiesCarousel from "./TechnologiesCarousel";
 
 const Technologies = () => {

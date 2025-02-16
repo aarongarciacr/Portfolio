@@ -1,8 +1,8 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import BackEnd from "./BackEnd";
-import FrontEnd from "./FrontEnd";
-import { Reveal } from "./Reveal";
+import BackEnd from "../Technologies/BackEnd";
+import FrontEnd from "../Technologies/FrontEnd";
+import { Reveal } from "../Reveal";
 
 const TechnologiesCarousel = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
