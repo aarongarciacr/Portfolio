@@ -65,7 +65,6 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
                 return (
                   <div
                     key={hobby.name}
-                    // className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 p-4 text-white"
                     className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 p-4 text-white"
                   >
                     <p className="mb-4 text-3xl font-bold">{hobby.name}</p>

@@ -5,6 +5,7 @@ import Hobbies from "./components/Hobbies/Hobbies";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Technologies from "./components/Technologies/Technologies";
 import Hobbies2 from "./components/Hobbies/Hobbies2";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
       <Portfolio />
       <Technologies />
       <Hobbies2 />
-      {/* <SwipeCarousel /> */}
-      {/* <Contact /> */}
+      <Contact />
       {/* <Socials /> */}
     </>
   );
