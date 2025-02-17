@@ -13,7 +13,6 @@ function App() {
       <Education />
       <Portfolio />
       <Technologies />
-      <Hobbies />
       <Hobbies2 />
       {/* <SwipeCarousel /> */}
       {/* <Contact /> */}
