@@ -47,7 +47,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
           bottom: 4,
           left: 0,
           right: 0,
-          background: "var(--color-neutral-600)",
+          background: "var(--color-neutral-400)",
           zIndex: 20,
           borderRadius: 10,
         }}

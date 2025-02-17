@@ -18,22 +18,22 @@ const Hobbies = () => {
 
   const dragX = useMotionValue(0);
 
-  useEffect(() => {
-    const intervalRef = setInterval(() => {
-      const x = dragX.get();
+  // useEffect(() => {
+  //   const intervalRef = setInterval(() => {
+  //     const x = dragX.get();
 
-      if (x === 0) {
-        setImgIndex((pv) => {
-          if (pv === imgs.length - 1) {
-            return 0;
-          }
-          return pv + 1;
-        });
-      }
-    }, AUTO_DELAY);
+  //     if (x === 0) {
+  //       setImgIndex((pv) => {
+  //         if (pv === imgs.length - 1) {
+  //           return 0;
+  //         }
+  //         return pv + 1;
+  //       });
+  //     }
+  //   }, AUTO_DELAY);
 
-    return () => clearInterval(intervalRef);
-  }, [dragX]);
+  //   return () => clearInterval(intervalRef);
+  // }, [dragX]);
 
   const onDragEnd = () => {
     const x = dragX.get();
@@ -61,12 +61,11 @@ const Hobbies = () => {
         }}
         transition={SPRING_OPTION}
         onDragEnd={onDragEnd}
-        className="flex cursor-grab items-center active:cursor-grabbing"
+        className="relative flex cursor-grab items-center active:cursor-grabbing"
       >
         <Images imgIndex={imgIndex} />
       </motion.div>
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
-      {/* <GradientEdges /> */}
     </div>
   );
 };
