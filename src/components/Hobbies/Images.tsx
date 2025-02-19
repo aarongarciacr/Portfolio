@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SPRING_OPTION } from "./Hobbies";
+import { SPRING_OPTION } from "./Hobbies2";
 import HOBBIES from "../../assets/hobbies/hobbies.jpg";
 import MUSIC from "../../assets/hobbies/music_production.jpg";
 import FRIENDS from "../../assets/hobbies/friends.jpg";

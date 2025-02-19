@@ -1,4 +1,4 @@
-import React, { JSX, useEffect, useRef } from "react";
+import { JSX, useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
@@ -18,7 +18,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
       mainControls.start("visible");
       slideControls.start("visible");
     }
-  }, [isInView, mainControls]);
+  }, [isInView, mainControls, slideControls]);
 
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>

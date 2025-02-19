@@ -5,7 +5,6 @@ import TRAVEL from "../../assets/hobbies/traveling.jpg";
 import WORKOUT from "../../assets/hobbies/workout.jpg";
 import { motion, useMotionValue } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { img } from "framer-motion/client";
 import { Reveal } from "../Reveal";
 
 const imgs = [HOBBIES, MUSIC, WORKOUT, TRAVEL, FRIENDS];
@@ -46,7 +45,7 @@ const DRAG_BUFFER = 50;
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 7;
 
-const SPRING_OPTION = {
+export const SPRING_OPTION = {
   type: "spring",
   mass: 3,
   stiffness: 400,
@@ -54,7 +53,6 @@ const SPRING_OPTION = {
 };
 
 const Hobbies2 = () => {
-  const [dragging, setDragging] = useState(false); //Boolean to check if the user is dragging the carousel
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0); // Motion value to track the drag position
@@ -72,16 +70,10 @@ const Hobbies2 = () => {
         });
       }
     }, AUTO_DELAY);
+    return () => clearInterval(intervalRef);
   }, [dragX]);
 
-  const onDragStart = () => {
-    setDragging(true);
-    console.log("start");
-  };
-
   const onDragEnd = () => {
-    setDragging(false);
-
     const x = dragX.get();
 
     if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
@@ -107,7 +99,6 @@ const Hobbies2 = () => {
           translateX: `-${imgIndex * 100}%`,
         }}
         transition={SPRING_OPTION}
-        onDragStart={onDragStart}
         onDragEnd={onDragEnd}
       >
         <Images imgIndex={imgIndex} />
