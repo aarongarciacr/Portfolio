@@ -14,27 +14,32 @@ const TechnologiesCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
 
   return (
-    <section
-      ref={targetRef}
-      className="relative h-[300vh] w-[200vw] bg-slate-800"
-    >
-      <div className="sticky top-0 h-screen overflow-hidden">
-        <Reveal>
-          <motion.div style={{ x }} className="flex h-full">
-            <div className="h-screen min-w-screen p-8">
-              <h2 className="mb-8 text-center text-4xl text-white">
-                Frontend Technologies
-              </h2>
+    <section ref={targetRef} className="relative h-[300vh] bg-slate-800">
+      <div className="sticky top-0 h-screen">
+        <div className="relative h-full overflow-hidden">
+          <motion.div
+            style={{ x }}
+            className="absolute top-0 left-0 flex h-screen w-[200vw]"
+          >
+            <div className="h-screen w-screen flex-shrink-0 p-8">
+              <Reveal width="100%">
+                <h2 className="mb-8 text-center text-4xl text-white">
+                  Frontend Technologies
+                </h2>
+              </Reveal>
               <FrontEnd />
             </div>
-            <div className="h-screen min-w-screen p-8">
-              <h2 className="mb-8 text-center text-4xl text-white">
-                Backend Technologies
-              </h2>
+
+            <div className="h-screen w-screen flex-shrink-0 p-8">
+              <Reveal width="100%">
+                <h2 className="mb-8 text-center text-4xl text-white">
+                  Backend Technologies
+                </h2>
+              </Reveal>
               <BackEnd />
             </div>
           </motion.div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

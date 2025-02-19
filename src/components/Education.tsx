@@ -18,7 +18,7 @@ const Education = () => {
   return (
     <>
       <div className="h-[80svh] bg-slate-800">
-        <div className="m-auto h-full w-[60svw]">
+        <div className="m-auto h-[100%] w-[60svw]">
           <Reveal>
             <h1 className="py-10 pb-0 text-3xl text-gray-400">Education</h1>
           </Reveal>

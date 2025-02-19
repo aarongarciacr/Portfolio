@@ -26,3 +26,7 @@
 .pause-animation {
   animation-play-state: paused;
 }
+
+/* * {
+  overflow-x: hidden;
+} */

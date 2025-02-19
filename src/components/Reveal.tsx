@@ -29,7 +29,7 @@ export const Reveal = ({
     <div
       ref={ref}
       style={{ position: "relative", width, overflow: "hidden" }}
-      className={className}
+      className={`${className}`}
     >
       <motion.div
         variants={{
@@ -39,6 +39,7 @@ export const Reveal = ({
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
+        className="h-full" // Add h-full here
       >
         {children}
       </motion.div>

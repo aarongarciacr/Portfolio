@@ -7,14 +7,14 @@ import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
-    <>
+    <div className="relative">
       <Greeting />
       <Education />
       <Portfolio />
       <Technologies />
       <Hobbies2 />
       <Contact />
-    </>
+    </div>
   );
 }
 

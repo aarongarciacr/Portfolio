@@ -9,6 +9,7 @@ import javascript from "../../assets/Technologies/Frontend/js.png";
 import redux from "../../assets/Technologies/Frontend/redux.png";
 import tailwind from "../../assets/Technologies/Frontend/tailwind.png";
 import typescript from "../../assets/Technologies/Frontend/TS.png";
+import { Reveal } from "../Reveal";
 
 interface TechType {
   type: string;
@@ -45,11 +46,13 @@ const FrontEnd = () => {
   return (
     <div ref={targetRef} className="h-[200vh]">
       <div className="sticky top-1/3 flex h-[60vh] items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
-          {frontTechnologies.map((tech, id) => {
-            return <TechnologyCard key={id} tech={tech} />;
-          })}
-        </motion.div>
+        <Reveal width="100%">
+          <motion.div style={{ x }} className="flex gap-4">
+            {frontTechnologies.map((tech, id) => {
+              return <TechnologyCard key={id} tech={tech} />;
+            })}
+          </motion.div>
+        </Reveal>
       </div>
     </div>
   );

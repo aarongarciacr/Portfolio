@@ -84,7 +84,7 @@ const Hobbies2 = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-800 py-8">
+    <div className="relative min-h-screen overflow-hidden bg-slate-200 py-8">
       <motion.div
         className="flex h-full cursor-grab items-center active:cursor-grabbing"
         drag="x"
