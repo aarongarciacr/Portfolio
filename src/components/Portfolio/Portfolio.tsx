@@ -10,18 +10,21 @@ const portfolio = [
     type: "Web Design",
     description: "Music Learning Platform",
     image: EarTrainer,
+    link: "https://capstone-j0as.onrender.com/",
   },
   {
-    name: "Assamble",
+    name: "Assemble",
     type: "Web Design",
     description: "E-Commerce",
     image: Assemble,
+    link: "https://python-group-gl7x.onrender.com/",
   },
   {
     name: "I'll BRB",
     type: "Web Design",
     description: "Airbnb Clone",
     image: Airbnb,
+    link: "https://ill-brb-y2ok.onrender.com/",
   },
 ];
 
@@ -37,12 +40,17 @@ const Portfolio = () => {
       <div className="mx-50 flex justify-around pt-15">
         {portfolio.map((project, index) => {
           return (
-            <Reveal key={index}>
+            <Reveal
+              key={index}
+              width="100%"
+              className="transform cursor-pointer transition-transform hover:scale-105"
+            >
               <PortfolioCard
                 name={project.name}
                 type={project.type}
                 description={project.description}
                 image={project.image}
+                link={project.link}
               />
             </Reveal>
           );

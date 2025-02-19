@@ -43,7 +43,7 @@ const hobbies: Hobbies[] = [
 
 const DRAG_BUFFER = 50;
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 7;
+const AUTO_DELAY = ONE_SECOND * 10;
 
 export const SPRING_OPTION = {
   type: "spring",

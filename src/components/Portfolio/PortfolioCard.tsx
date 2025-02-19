@@ -3,6 +3,7 @@ interface PortfolioCardProps {
   description: string;
   type: string;
   image: string;
+  link: string;
 }
 
 const PortfolioCard = ({
@@ -10,10 +11,14 @@ const PortfolioCard = ({
   description,
   type,
   image,
+  link,
 }: PortfolioCardProps) => {
   return (
     <>
-      <div className="relative h-[50svh] w-[24svw] overflow-hidden rounded-lg shadow-lg">
+      <div
+        onClick={() => window.open(link, "_blank")}
+        className="relative h-[50svh] w-[24svw] overflow-hidden rounded-lg shadow-lg"
+      >
         <img
           src={image}
           alt={name}
