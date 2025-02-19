@@ -15,8 +15,7 @@ function App() {
       <Portfolio />
       <Technologies />
       <Hobbies2 />
-      <Contact />
-      {/* <Socials /> */}
+      <Contact id="contact" />
     </>
   );
 }

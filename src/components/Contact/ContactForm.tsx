@@ -1,16 +1,27 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
+interface Status {
+  error?: string;
+  success?: string;
+}
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<Status>({});
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus({ error: "Please fill out all fields." });
+      return;
+    }
+
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -18,10 +29,10 @@ const ContactForm = () => {
         formData,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
-      setStatus("Message sent successfully!");
+      setStatus({ success: "Message sent successfully!" });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      setStatus("Failed to send message. Please try again.");
+      setStatus({ error: "An error occurred, please try again later." });
     }
   };
 
@@ -65,11 +76,20 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="w-50 cursor-pointer rounded-md bg-gray-800 p-2 text-lg text-white transition-colors hover:bg-gray-700 active:bg-gray-900"
+          className="rounded-sm border-gray-200 bg-gray-700 p-3 px-9 text-2xl text-gray-200 hover:border-transparent hover:bg-gray-500 hover:text-white active:bg-gray-600"
         >
           <p className="text-center font-bold tracking-[.5rem]">SEND</p>
         </button>
-        {status && <p className="mt-4 text-center">{status}</p>}
+        {status.error && (
+          <p className="mt-4 text-center text-2xl font-bold text-red-600 uppercase">
+            {status.error}
+          </p>
+        )}
+        {status.success && (
+          <p className="mt-4 text-center text-2xl font-bold text-green-600 uppercase">
+            {status.success}
+          </p>
+        )}
       </form>
     </div>
   );
