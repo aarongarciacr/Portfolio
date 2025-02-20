@@ -1,6 +1,5 @@
 import ProfileImg from "../../assets/ProfileImg.png";
 import "../../index.css";
-import About from "./About";
 import { Reveal } from "../Reveal";
 
 const Greeting = () => {
