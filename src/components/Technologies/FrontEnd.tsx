@@ -32,7 +32,7 @@ const frontTechnologies: TechType[] = [
   {
     type: "Styling",
     name: "Tailwind CSS",
-    icons: [tailwind],
+    icons: [tailwind, tailwind],
   },
 ];
 
