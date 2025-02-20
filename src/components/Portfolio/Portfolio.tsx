@@ -30,20 +30,20 @@ const portfolio = [
 
 const Portfolio = () => {
   return (
-    <div className="h-[100svh] bg-slate-200">
-      <div className="m-auto w-[60svw]">
-        <Reveal>
+    <div className="bg-slate-200 xl:h-[100vh]">
+      <div className="m-auto w-[60svw] text-center xl:text-left">
+        <Reveal width="100%">
           <h1 className="py-20 pl-0 text-5xl">My Work</h1>
         </Reveal>
       </div>
 
-      <div className="mx-50 flex justify-around pt-15">
+      <div className="m-auto flex w-[90vw] flex-col justify-around xl:m-auto xl:w-[80%] xl:flex-row">
         {portfolio.map((project, index) => {
           return (
             <Reveal
               key={index}
               width="100%"
-              className="transform cursor-pointer transition-transform hover:scale-105"
+              className="my-5 transform cursor-pointer transition-transform hover:scale-105"
             >
               <PortfolioCard
                 name={project.name}

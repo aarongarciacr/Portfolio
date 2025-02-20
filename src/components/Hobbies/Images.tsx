@@ -67,7 +67,9 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
                     key={hobby.name}
                     className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 p-4 text-white"
                   >
-                    <p className="mb-4 text-3xl font-bold">{hobby.name}</p>
+                    <p className="mb-4 text-center text-3xl font-bold">
+                      {hobby.name}
+                    </p>
                     <p className="max-w-2xl text-center text-xl">
                       {hobby.description}
                     </p>

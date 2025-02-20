@@ -3,8 +3,10 @@ import { useRef } from "react";
 import BackEnd from "../Technologies/BackEnd";
 import FrontEnd from "../Technologies/FrontEnd";
 import { Reveal } from "../Reveal";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const TechnologiesCarousel = () => {
+  const isMobile = useIsMobile();
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -12,6 +14,32 @@ const TechnologiesCarousel = () => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
+
+  if (isMobile) {
+    return (
+      <section className="bg-slate-800 py-8">
+        <div className="m-auto flex w-[90vw] flex-col space-y-12">
+          <div>
+            <Reveal width="100%">
+              <h2 className="mb-8 text-center text-4xl text-white">
+                Frontend Technologies
+              </h2>
+            </Reveal>
+            <FrontEnd />
+          </div>
+
+          <div>
+            <Reveal width="100%">
+              <h2 className="mb-8 text-center text-4xl text-white">
+                Backend Technologies
+              </h2>
+            </Reveal>
+            <BackEnd />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-slate-800">

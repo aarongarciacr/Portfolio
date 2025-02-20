@@ -17,17 +17,17 @@ const education = [
 const Education = () => {
   return (
     <>
-      <div className="h-[80svh] bg-slate-800">
-        <div className="m-auto h-[100%] w-[60svw]">
-          <Reveal>
+      <div className="bg-slate-800 pb-20 xl:h-[80svh] xl:pb-0">
+        <div className="m-auto h-[100%] w-[90vw] text-center xl:w-[60svw] xl:text-left">
+          <Reveal width="100%">
             <h1 className="py-10 pb-0 text-3xl text-gray-400">Education</h1>
           </Reveal>
           <div className="flex h-[80%] flex-col justify-around text-gray-200">
             {education.map((school, index) => {
               return (
                 <div key={index}>
-                  <Reveal>
-                    <h1 className="py-5 text-5xl">{school.name}</h1>
+                  <Reveal width="100%">
+                    <h1 className="py-5 text-4xl xl:text-5xl">{school.name}</h1>
                   </Reveal>
                   <Reveal>
                     <p className="text-2xl">{school.description}</p>

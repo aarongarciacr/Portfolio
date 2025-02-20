@@ -49,7 +49,7 @@ const ContactForm = () => {
     <div className="text-gray flex h-full w-full flex-col items-center justify-center bg-neutral-50 p-4">
       <form
         onSubmit={handleSubmit}
-        className="flex h-130 w-full flex-col items-center justify-around p-4 text-gray-800"
+        className="p:0 flex w-[100%] flex-col items-center justify-around text-gray-800 xl:h-130 xl:w-full xl:p-4"
       >
         <input
           type="text"
@@ -57,7 +57,7 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           placeholder="Name"
-          className="mb-4 w-130 border-b-2 border-gray-400 p-2 text-lg"
+          className="mb-4 w-[90%] border-b-2 border-gray-400 p-2 text-lg xl:w-130"
         />
         <input
           type="email"
@@ -65,14 +65,14 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           placeholder="Email"
-          className="mb-4 w-130 border-b-2 border-gray-400 p-2 text-lg"
+          className="mb:w-130 mb-4 w-[90%] border-b-2 border-gray-400 p-2 text-lg"
         />
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
           placeholder="Message"
-          className="mb-4 h-50 w-130 border-b-2 border-gray-400 p-2 text-lg"
+          className="mb:w-130 mb-4 h-50 w-[90%] border-b-2 border-gray-400 p-2 text-lg"
         />
         <button
           type="submit"

@@ -6,10 +6,10 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="relative flex h-[100svh] items-center justify-center bg-slate-200"
+      className="relative flex items-center justify-center bg-slate-200 xl:h-[100svh]"
     >
       <Reveal>
-        <div className="flex h-170 w-300 items-center justify-around">
+        <div className="flex flex-col items-center justify-around xl:h-170 xl:w-300 xl:flex-row">
           <ContactInfo />
           <ContactForm />
         </div>

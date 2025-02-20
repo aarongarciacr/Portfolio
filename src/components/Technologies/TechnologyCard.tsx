@@ -8,10 +8,10 @@ interface TechnologyCardProps {
 
 const TechnologyCard = ({ tech }: TechnologyCardProps) => {
   return (
-    <div className="flex flex-col text-3xl text-slate-200">
+    <div className="flex flex-col text-center text-3xl text-slate-200 xl:text-left">
       <h1 className="pb-10">{tech.type}</h1>
 
-      <div className="group relative flex h-[450px] w-[450px] items-center justify-center overflow-hidden rounded-xl bg-neutral-200">
+      <div className="group relative flex items-center justify-center overflow-hidden rounded-xl bg-neutral-200 xl:h-[450px] xl:w-[450px]">
         <div className="scroll-container">
           <div className={`scroll-container scroll-animation`}>
             {tech.icons.map((icon, id) => (

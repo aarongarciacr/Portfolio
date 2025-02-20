@@ -5,11 +5,13 @@ import Technologies from "./components/Technologies/Technologies";
 import Hobbies2 from "./components/Hobbies/Hobbies2";
 import Contact from "./components/Contact/Contact";
 import SocialLinks from "./components/SocialLinks";
+import About from "./components/LandingPage/About";
 
 function App() {
   return (
     <div className="relative">
       <Greeting />
+      <About />
       <Education />
       <Portfolio />
       <Technologies />

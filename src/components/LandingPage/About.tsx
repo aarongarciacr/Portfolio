@@ -3,8 +3,8 @@ import { Reveal } from "../Reveal";
 
 const About = () => {
   return (
-    <>
-      <div className="m-auto flex w-[60svw] flex-col justify-center">
+    <div className="w-full bg-slate-200 pb-20 xl:h-[35vh] xl:pb-0">
+      <div className="m-auto flex w-[90vw] flex-col items-center justify-center text-center xl:w-[60svw] xl:items-start xl:py-10 xl:text-left">
         <Reveal>
           <p className="text-3xl tracking-tighter">A Bit About Me</p>
         </Reveal>
@@ -23,7 +23,7 @@ const About = () => {
           </p>
         </Reveal>
       </div>
-    </>
+    </div>
   );
 };
 

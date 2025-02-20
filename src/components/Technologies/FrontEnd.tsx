@@ -10,6 +10,7 @@ import redux from "../../assets/Technologies/Frontend/redux.png";
 import tailwind from "../../assets/Technologies/Frontend/tailwind.png";
 import typescript from "../../assets/Technologies/Frontend/TS.png";
 import { Reveal } from "../Reveal";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 interface TechType {
   type: string;
@@ -36,6 +37,7 @@ const frontTechnologies: TechType[] = [
 ];
 
 const FrontEnd = () => {
+  const isMobile = useIsMobile();
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -43,8 +45,23 @@ const FrontEnd = () => {
   });
 
   const x = useTransform(scrollYProgress, [0.4, 0.8], ["16%", "-95%"]);
+
+  if (isMobile) {
+    return (
+      <>
+        {/* <Reveal width="100%"> */}
+        <motion.div className="flex flex-col gap-4">
+          {frontTechnologies.map((tech, id) => {
+            return <TechnologyCard key={id} tech={tech} />;
+          })}
+        </motion.div>
+        {/* </Reveal> */}
+      </>
+    );
+  }
+
   return (
-    <div ref={targetRef} className="h-[200vh]">
+    <div ref={targetRef} className="h-full xl:h-[200vh]">
       <div className="sticky top-1/3 flex h-[60vh] items-center overflow-hidden">
         <Reveal width="100%">
           <motion.div style={{ x }} className="flex gap-4">

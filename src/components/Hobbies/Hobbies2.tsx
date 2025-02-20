@@ -6,6 +6,7 @@ import WORKOUT from "../../assets/hobbies/workout.jpg";
 import { motion, useMotionValue } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Reveal } from "../Reveal";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const imgs = [HOBBIES, MUSIC, WORKOUT, TRAVEL, FRIENDS];
 type Hobbies = {
@@ -41,10 +42,6 @@ const hobbies: Hobbies[] = [
   },
 ];
 
-const DRAG_BUFFER = 50;
-const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 10;
-
 export const SPRING_OPTION = {
   type: "spring",
   mass: 3,
@@ -53,6 +50,10 @@ export const SPRING_OPTION = {
 };
 
 const Hobbies2 = () => {
+  const isMobile = useIsMobile();
+  const DRAG_BUFFER = isMobile ? 50 : 25;
+  const ONE_SECOND = 1000;
+  const AUTO_DELAY = ONE_SECOND * 10;
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0); // Motion value to track the drag position
@@ -136,7 +137,9 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
               className="absolute inset-0 m-auto flex flex-col items-center justify-center rounded-xl bg-black/50 p-4 text-white"
             >
               <Reveal>
-                <p className="mb-4 text-6xl font-bold">{hobbies[idx].name}</p>
+                <p className="mb-4 text-center text-6xl font-bold">
+                  {hobbies[idx].name}
+                </p>
               </Reveal>
               <Reveal>
                 <p className="max-w-5xl text-center text-3xl">

@@ -1,6 +1,6 @@
 const ContactInfo = () => {
   return (
-    <div className="flex h-full w-250 flex-col items-start justify-around bg-neutral-700 p-10 pl-11 text-white">
+    <div className="flex h-full flex-col items-start justify-around bg-neutral-700 p-10 pl-11 text-white xl:w-250">
       <h1 className="mb-4 text-6xl">Let&apos;s Talk</h1>
       <p className="mb-4 text-3xl">
         I&apos;m always open to new opportunities and collaborations. Feel free
