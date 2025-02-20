@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="relative flex h-[90svh] items-center justify-center bg-slate-200"
+      className="relative flex h-[100svh] items-center justify-center bg-slate-200"
     >
       <Reveal>
         <div className="flex h-170 w-300 items-center justify-around">

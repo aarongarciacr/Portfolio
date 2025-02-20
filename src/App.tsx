@@ -4,6 +4,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Technologies from "./components/Technologies/Technologies";
 import Hobbies2 from "./components/Hobbies/Hobbies2";
 import Contact from "./components/Contact/Contact";
+import SocialLinks from "./components/SocialLinks";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Technologies />
       <Hobbies2 />
       <Contact />
+      <SocialLinks />
     </div>
   );
 }
