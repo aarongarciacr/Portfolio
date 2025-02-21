@@ -4,9 +4,10 @@ import FRIENDS from "../../assets/hobbies/friends.jpg";
 import TRAVEL from "../../assets/hobbies/traveling.jpg";
 import WORKOUT from "../../assets/hobbies/workout.jpg";
 import { motion, useMotionValue } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { Reveal } from "../Reveal";
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { useInView } from "../../hooks/useInView";
 
 const imgs = [HOBBIES, MUSIC, WORKOUT, TRAVEL, FRIENDS];
 type Hobbies = {
@@ -50,29 +51,40 @@ export const SPRING_OPTION = {
 };
 
 const Hobbies2 = () => {
+  const containerRef = useRef<HTMLDivElement>(null!);
+  const isInView = useInView(containerRef);
   const isMobile = useIsMobile();
   const DRAG_BUFFER = isMobile ? 50 : 25;
   const ONE_SECOND = 1000;
-  const AUTO_DELAY = ONE_SECOND * 10;
+  const AUTO_DELAY = ONE_SECOND * 7;
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0); // Motion value to track the drag position
 
   useEffect(() => {
-    const intervalRef = setInterval(() => {
-      const x = dragX.get();
+    let intervalRef: NodeJS.Timeout;
 
-      if (x === 0) {
-        setImgIndex((pv) => {
-          if (pv === imgs.length - 1) {
-            return 0;
-          }
-          return pv + 1;
-        });
+    if (isInView) {
+      intervalRef = setInterval(() => {
+        const x = dragX.get();
+
+        if (x === 0) {
+          setImgIndex((pv) => {
+            if (pv === imgs.length - 1) {
+              return 0;
+            }
+            return pv + 1;
+          });
+        }
+      }, AUTO_DELAY);
+    }
+
+    return () => {
+      if (intervalRef) {
+        clearInterval(intervalRef);
       }
-    }, AUTO_DELAY);
-    return () => clearInterval(intervalRef);
-  }, [dragX]);
+    };
+  }, [dragX, isInView, AUTO_DELAY]);
 
   const onDragEnd = () => {
     const x = dragX.get();
@@ -85,7 +97,10 @@ const Hobbies2 = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-200 py-8">
+    <div
+      ref={containerRef}
+      className="relative min-h-screen overflow-hidden bg-slate-200 py-8"
+    >
       <motion.div
         className="flex h-full cursor-grab items-center active:cursor-grabbing"
         drag="x"

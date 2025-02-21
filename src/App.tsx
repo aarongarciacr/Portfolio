@@ -6,18 +6,26 @@ import Hobbies2 from "./components/Hobbies/Hobbies2";
 import Contact from "./components/Contact/Contact";
 import SocialLinks from "./components/SocialLinks";
 import About from "./components/LandingPage/About";
+import { ReactLenis } from "lenis/react";
 
 function App() {
   return (
     <div className="relative">
-      <Greeting />
-      <About />
-      <Education />
-      <Portfolio />
-      <Technologies />
-      <Hobbies2 />
-      <Contact />
-      <SocialLinks />
+      <ReactLenis
+        root
+        options={{
+          lerp: 0.05,
+        }}
+      >
+        <Greeting />
+        <About />
+        <Education />
+        <Portfolio />
+        <Technologies />
+        <Hobbies2 />
+        <Contact />
+        <SocialLinks />
+      </ReactLenis>
     </div>
   );
 }
