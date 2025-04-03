@@ -4,7 +4,6 @@ import EarTrainer from "../../assets/portfolio/EarTrainer.png";
 import BeatMatch from "../../assets/portfolio/BeatMatch-ai.png";
 import PortfolioCard from "./PortfolioCard";
 import { Reveal } from "../Reveal";
-import { link } from "fs";
 
 const portfolio = [
   {
