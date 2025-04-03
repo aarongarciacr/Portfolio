@@ -1,7 +1,7 @@
 import Airbnb from "../../assets/portfolio/Airbnb.png";
 import Assemble from "../../assets/portfolio/Assemble.png";
 import EarTrainer from "../../assets/portfolio/EarTrainer.png";
-import BeatMatch from "../../assets/portfolio/BeatMatch-ai.png";
+import BeatMatch from "../../assets/portfolio/Beatmatch-ai.png";
 import PortfolioCard from "./PortfolioCard";
 import { Reveal } from "../Reveal";
 
