@@ -17,7 +17,7 @@ const PortfolioCard = ({
     <>
       <div
         onClick={() => window.open(link, "_blank")}
-        className="relative h-[50svh] overflow-hidden rounded-lg shadow-lg xl:w-[24svw]"
+        className="relative h-[50svh] overflow-hidden rounded-lg shadow-lg xl:w-[23em]"
       >
         <img
           src={image}

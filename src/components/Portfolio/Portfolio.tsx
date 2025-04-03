@@ -1,10 +1,26 @@
 import Airbnb from "../../assets/portfolio/Airbnb.png";
 import Assemble from "../../assets/portfolio/Assemble.png";
 import EarTrainer from "../../assets/portfolio/EarTrainer.png";
+import BeatMatch from "../../assets/portfolio/BeatMatch-ai.png";
 import PortfolioCard from "./PortfolioCard";
 import { Reveal } from "../Reveal";
+import { link } from "fs";
 
 const portfolio = [
+  {
+    name: "BeatMatch-AI",
+    type: "Web Design",
+    description: "AI Playlist Generator",
+    image: BeatMatch,
+    link: "https://beatmatch-ai.onrender.com/",
+  },
+  {
+    name: "I'll BRB",
+    type: "Web Design",
+    description: "Airbnb Clone",
+    image: Airbnb,
+    link: "https://ill-brb-y2ok.onrender.com/",
+  },
   {
     name: "Ear Trainer",
     type: "Web Design",
@@ -18,13 +34,6 @@ const portfolio = [
     description: "E-Commerce",
     image: Assemble,
     link: "https://python-group-gl7x.onrender.com/",
-  },
-  {
-    name: "I'll BRB",
-    type: "Web Design",
-    description: "Airbnb Clone",
-    image: Airbnb,
-    link: "https://ill-brb-y2ok.onrender.com/",
   },
 ];
 
